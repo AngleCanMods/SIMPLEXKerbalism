@@ -1,5 +1,5 @@
-KerbalismSimplex 3.8
-version 3.8 - for Kerbalism 3.14
+KerbalismSimplex 3.10
+version 3.10 - for Kerbalism 3.14
 
 
 Author: theJesuit, and contributors to KerbalismSimplex
