@@ -1,10 +1,10 @@
-//	*** 12 Hour Day adjustment version Adjustment: Consumables, Organic Slurry, Air, BadAir 
+//	*** 8 hour day Adjustment: Consumables, Organic Slurry, Air, BadAir 
 
 //	=========================== seeing the coding among the stars
 //	*** Kerbalism SIMPLEX   ***
 //	=========================== by theJesuit
 //
-//	*** VERSION 3.7.20220129
+//	*** VERSION 3.9.20221127
 //	*** Licence Unlicence http://unlicense.org/
 //		
 //	***	Requires Module Manager for KSP - check out the Forums https://forum.kerbalspaceprogram.com
@@ -26,48 +26,90 @@
 //	The AngleCan Simplex profile with JNSQ
 //	============================================================================
 
-// 12 hour adjustments
-	@RESOURCE_DEFINITION[Air]			{	@density *= 2	}
-	@RESOURCE_DEFINITION[BadAir]		{	@density *= 2	}
-	@RESOURCE_DEFINITION[Consumables]	{	@density *= 2	}
-	@RESOURCE_DEFINITION[OrganicSlurry]	{	@density *= 2	}
+// 8 hour adjustments
+	@RESOURCE_DEFINITION[Air]			{	@density /= 3	}
+	@RESOURCE_DEFINITION[Air]			{	@density *= 4	}
+	@RESOURCE_DEFINITION[BadAir]		{	@density /= 3	}
+	@RESOURCE_DEFINITION[BadAir]		{	@density *= 4	}	
+	@RESOURCE_DEFINITION[Consumables]	{	@density /= 3	}
+	@RESOURCE_DEFINITION[OrganicSlurry]	{	@density *= 4	}
 
 //	Greenhouses
 	@PART[kerbalism-greenhouse]:NEEDS[Profilesimplex]:FOR[Kerbalism]
-		{	@MODULE[Greenhouse]		{	@crop_rate /= 2						// halved growth per-second for 72 days (12 hour day and 1/5 365) 
-										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 2 	}
-										@INPUT_RESOURCE[BadAir]			{	@rate /= 2	}
-										@OUTPUT_RESOURCE[Air]			{	@rate /= 2	}
+		{	@MODULE[Greenhouse]		{	@crop_rate *= 3
+										@crop_rate /= 4
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate *= 3 	}
+										@INPUT_RESOURCE[BadAir]			{	@rate *= 3	}
+										@OUTPUT_RESOURCE[Air]			{	@rate *= 3	}
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 4	}
+										@INPUT_RESOURCE[BadAir]			{	@rate /= 4	}
+										@OUTPUT_RESOURCE[Air]			{	@rate /= 4	}
 		}							}
 
 	@PART[Benjee10_MMSEV_baseGreenhouse]:NEEDS[Benjee10_MMSEV,Profilesimplex]:FOR[Kerbalism]
-		{	@MODULE[Greenhouse]		{	@crop_rate /= 2						// halved growth per-second for 72 days (12 hour day and 1/5 365) 
-										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 2 	}
-										@INPUT_RESOURCE[BadAir]			{	@rate /= 2	}
-										@OUTPUT_RESOURCE[Air]			{	@rate /= 2	}
+		{	@MODULE[Greenhouse]		{	@crop_rate *= 3
+										@crop_rate /= 4
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate *= 3 	}
+										@INPUT_RESOURCE[BadAir]			{	@rate *= 3	}
+										@OUTPUT_RESOURCE[Air]			{	@rate *= 3	}
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 4	}
+										@INPUT_RESOURCE[BadAir]			{	@rate /= 4	}
+										@OUTPUT_RESOURCE[Air]			{	@rate /= 4	}
 		}							}
 
 	@PART[KKAOSS_Greenhouse_g]:NEEDS[PlanetaryBaseInc,Profilesimplex]:FOR[Kerbalism]
-		{	@MODULE[Greenhouse]		{	@crop_rate /= 2						// halved growth per-second for 72 days (12 hour day and 1/5 365) 
-										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 2 	}
-										@INPUT_RESOURCE[BadAir]			{	@rate /= 2	}
-										@OUTPUT_RESOURCE[Air]			{	@rate /= 2	}
+		{	@MODULE[Greenhouse]		{	@crop_rate *= 3
+										@crop_rate /= 4
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate *= 3 	}
+										@INPUT_RESOURCE[BadAir]			{	@rate *= 3	}
+										@OUTPUT_RESOURCE[Air]			{	@rate *= 3	}
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 4	}
+										@INPUT_RESOURCE[BadAir]			{	@rate /= 4	}
+										@OUTPUT_RESOURCE[Air]			{	@rate /= 4	}
 		}							}
  
 	@PART[sspx-greenhouse-25-1|sspx-greenhouse-375-1,sspx-greenhouse-25-1,sspx-cupola-greenhouse-125-1,sspx-greenhouse-5-1,sspx-dome-greenhouse-5-1]:NEEDS[StationPartsExpansionRedux,Profilesimplex]:FOR[Kerbalism]
-		{	@MODULE[Greenhouse]		{	@crop_rate /= 2						// halved growth per-second for 72 days (12 hour day and 1/5 365) 
-										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 2 	}
-										@INPUT_RESOURCE[BadAir]			{	@rate /= 2	}
-										@OUTPUT_RESOURCE[Air]			{	@rate /= 2	}
+		{	@MODULE[Greenhouse]		{	@crop_rate *= 3
+										@crop_rate /= 4
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate *= 3 	}
+										@INPUT_RESOURCE[BadAir]			{	@rate *= 3	}
+										@OUTPUT_RESOURCE[Air]			{	@rate *= 3	}
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 4	}
+										@INPUT_RESOURCE[BadAir]			{	@rate /= 4	}
+										@OUTPUT_RESOURCE[Air]			{	@rate /= 4	}
 		}							}
 	@PART[sspx-aquaculture-375-1]:NEEDS[StationPartsExpansionRedux,Profilesimplex]:FOR[Kerbalism]
 		{	@MODULE[Greenhouse]		{	@crop_rate /= 2						// halved growth per-second for 72 days (12 hour day and 1/5 365) 
-										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 2 	}
-										@INPUT_RESOURCE[BadAir]			{	@rate /= 2	}
-										@OUTPUT_RESOURCE[Consumables]	{	@rate /= 2	}
-										@OUTPUT_RESOURCE[Air]			{	@rate /= 2	}
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate *= 3 	}
+										@INPUT_RESOURCE[BadAir]			{	@rate *= 3	}
+										@OUTPUT_RESOURCE[Consumables]	{	@rate *= 3	}
+										@OUTPUT_RESOURCE[Air]			{	@rate *= 3	}
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 4	}
+										@INPUT_RESOURCE[BadAir]			{	@rate /= 4	} 
+										@OUTPUT_RESOURCE[Consumables]	{	@rate /= 4	}
+										@OUTPUT_RESOURCE[Air]			{	@rate /= 4	}
 		}							}
-
+	@PART[mmgh-agr-1875|mmgh-agr-250|mmgh-agr-375]:NEEDS[MoldaviteMachines,Profilesimplex]:FOR[Kerbalism]
+		{	@MODULE[Greenhouse]		{	@crop_rate *= 3
+										@crop_rate /= 4
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate *= 3 	}
+										@INPUT_RESOURCE[BadAir]			{	@rate *= 3	}
+										@OUTPUT_RESOURCE[Air]			{	@rate *= 3	}
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 4	}
+										@INPUT_RESOURCE[BadAir]			{	@rate /= 4	}
+										@OUTPUT_RESOURCE[Air]			{	@rate /= 4	}
+		}							} 
+	@PART[mmgh-alg-1875,mmgh-alg-250,mmgh-alg-375]:NEEDS[MoldaviteMachines,Profilesimplex]:FOR[Kerbalism]
+		{	@MODULE[Greenhouse]		{	@crop_rate *= 3
+										@crop_rate /= 4
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate *= 3 	}
+										@INPUT_RESOURCE[BadAir]			{	@rate *= 3	}
+										@OUTPUT_RESOURCE[Consumables]	{	@rate *= 3	}
+										@OUTPUT_RESOURCE[Air]			{	@rate *= 3	}
+										@INPUT_RESOURCE[OrganicSlurry]	{	@rate /= 4	}
+										@INPUT_RESOURCE[BadAir]			{	@rate /= 4	} 
+										@OUTPUT_RESOURCE[Consumables]	{	@rate /= 4	}
+										@OUTPUT_RESOURCE[Air]			{	@rate /= 4	}		}							}
 
 Profile
 	{	name = simplex
@@ -78,7 +120,7 @@ Profile
 				on_pod = 50.0
 				on_eva = 33.0
 				on_rescue = 10000.0
-				low_message = KERBALISM_low_battery
+				low_message = #KERBALISM_low_battery
 				empty_message = #KERBALISM_empty_battery
 				refill_message = #KERBALISM_refill_battery
 			}
@@ -118,7 +160,7 @@ Profile
 				input = Consumables
 				output = OrganicSlurry
 				rate = .5			
-				interval = 21600						// JNSQ original 10800				// 2 meals per-day
+				interval = 14400						// 8 hour day original 10800				// 2 meals per-day
 				degeneration = 0.03333					// 30 meals, 15 days
 				warning_message = #KERBALISM_food_warning
 				danger_message = #KERBALISM_food_danger
@@ -129,7 +171,7 @@ Profile
 			{	name = breathing
 				input = Air								// Air
 				output = WasteAtmosphere
-				rate = 0.00002314815					//	JNSQ original 0.00004629630			// 1.251 kg per day JNSQ 2.502 kg per day
+				rate = 0.00003472223					// 8 hour day  original 0.00004629630			// 1.251 kg per 6 hour day
 				ratio = 25								// vanilla takes 3 hours to feel lightheaded in mk1 pod
 														// when Air is *1000 Atmosphere, and ratio is 1000 it takes around 15mins to feel lightheaded
 														// adjust ratio to make it three hours, ratio is good at 25 for timing in a mk1 pod.
@@ -187,14 +229,14 @@ Profile
 				modifier = _Scrubber
 				input = ElectricCharge@0.025
 				input = WasteAtmosphere@0.025																		//	0.0000462963
-				output = BadAir@0.0005					//	JNSQ original 0.001 will take out same rate per day as atmoharvesting	//	0.0000462963
+				output = BadAir@0.00075					//	8 hour day original 0.001 will take out same rate per day as atmoharvesting	//	0.0000462963
 				dump = true
 			} 
  		Process
 			{	name = pressure control					// This seems to be an arbitary amount - but works reasonably fast to return a habitat to normal.
 				modifier = _PressureControl,non_breathable
 				input = ElectricCharge@0.3
-				input = Air@0.000175					//	original 0.00035 JNSQ  will convert half amount to balacnce increase mass Air@0.000175 							//.35
+				input = Air@0.0002625					//	8 hour day original 0.00035
 				output = Atmosphere@0.35
 				dump = false
 			}
@@ -219,7 +261,7 @@ Profile
 		Process
 			{	name = monoprop fuel cell
 				modifier = _MonopropFuelCell
-				input =	Air@0.00002314815				// original 0.0000462963 JNSQ half amount as mass has doubled.   
+				input =	Air@0.00003472223			// 8 hour day original 0.0000462963   
 				input = MonoPropellant@0.003
 				output = ElectricCharge@0.1
 			}			
@@ -253,15 +295,19 @@ Profile
 			{	name = Ore to MP   					// ISRU to based on Stock
 				modifier = _OretoMP
 				input = ElectricCharge@30
-				input = Ore@0.5
+				input = Ore@0.52
 				output = MonoPropellant@1.0
+				output = BadAir@0.02
+				dump_valve = MonoPropellant,BadAir	// do I need this for balance?
 			}
 		Process
 			{	name = mini Ore to MP   			// ISRU to based on Stock
 				modifier = _miniOretoMP
 				input = ElectricCharge@30
-				input = Ore@2.5
+				input = Ore@2.51
 				output = MonoPropellant@0.5
+				output = BadAir@0.001
+				dump_valve = MonoPropellant,BadAir	// do I need this for balance?
 			}				
 		Process
 			{	name = Ore to OS  
@@ -269,8 +315,15 @@ Profile
 				input = ElectricCharge@30
 				input = Ore@0.5
 				output = OrganicSlurry@0.75
-				output = Air@0.075					//	original 0.15 JNSQ will only get 0.075 as mass is doubled. 
+				output = Air@0.12					//	8 hour day original 0.15 
 				dump_valve = OrganicSlurry,Air
+			}
+		Process
+			{	name = coolant replenishment
+				title = #KerbalismSimplex_coolant_gen
+				modifier = _coolant
+				input = ElectricCharge@0.01				// For pumping coolant
+				output = Coolant@1.0
 			}
 	}	// Profile ends here
 
@@ -621,7 +674,11 @@ Profile
 			density = 0.0
 			isVisible = false
 		}
-
+	RESOURCE_DEFINITION
+		{	name = _coolant
+			density = 0.0
+			isVisible = false
+		}
 	RESOURCE_DEFINITION
 		{	name = _AirPump
 			density = 0.0
