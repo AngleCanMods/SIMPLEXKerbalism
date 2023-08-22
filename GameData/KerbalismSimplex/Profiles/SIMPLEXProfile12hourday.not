@@ -274,15 +274,19 @@ Profile
 			{	name = Ore to MP   					// ISRU to based on Stock
 				modifier = _OretoMP
 				input = ElectricCharge@30
-				input = Ore@0.5
+				input = Ore@0.52
 				output = MonoPropellant@1.0
+				output = BadAir@0.02
+				dump_valve = MonoPropellant,BadAir	// do I need this for balance?
 			}
 		Process
 			{	name = mini Ore to MP   			// ISRU to based on Stock
 				modifier = _miniOretoMP
 				input = ElectricCharge@30
-				input = Ore@2.5
+				input = Ore@2.51
 				output = MonoPropellant@0.5
+				output = BadAir@0.001
+				dump_valve = MonoPropellant,BadAir	// do I need this for balance?
 			}				
 		Process
 			{	name = Ore to OS  
